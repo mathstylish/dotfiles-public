@@ -1,4 +1,5 @@
 local discipline = require("mathstylish.util.discipline")
+
 discipline.cowboy()
 
 local keymap = vim.keymap
@@ -12,11 +13,14 @@ keymap.set("n", "<leader>q", ":q!<CR>", opts)
 
 -- Save file
 keymap.set("n", "<leader>w", ":write<CR>", opts)
-keymap.set("n", "<C-s>", ":write<CR>", opts)
+-- keymap.set("n", "<C-s>", ":write<CR>", opts)
 
 -- Increment / decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
+
+-- Intellij complete statement
+keymap.set("i", "çl", "<Esc>A;<Esc>o", opts)
 
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G", opts)
@@ -60,3 +64,6 @@ keymap.set("v", ">", ">gv", opts)
 keymap.set("n", "<C-j>", function()
 	vim.diagnostic.goto_next()
 end, opts)
+
+-- Live Server
+keymap.set("n", "<leader>ls", ":LiveServerStart<CR>", opts)
