@@ -1,0 +1,77 @@
+" general
+set clipboard+=unnamed
+set clipboard+=ideaput
+set incsearch
+set number relativenumber
+set visualbell
+set idearefactormode=select
+set iskeyword+=-
+set ideajoin
+
+" plugins
+set commentary
+set NERDTree
+set easymotion
+set highlightedyank
+set surround
+Plug 'terryma/vim-multiple-cursors'
+
+" basic mapping
+let mapleader = " "
+imap kj <Esc>
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+vmap < <gv
+vmap > >gv
+
+" actions
+nmap <leader>w <action>:(SaveAll)<CR>
+nmap <leader>c <action>(CloseContent)
+nmap <leader>C <action>(CloseAllEditors)
+nmap <leader>vs <action>(SplitVertically)
+nmap <leader>vh <action>(SplitHorizontally)
+nmap <leader>m <action>(MoveEditorToOppositeTabGroup)
+nmap Y <action>(EditorDuplicate)
+vmap Y <action>(EditorDuplicate)
+imap <A-k> <action>(MoveStatementUp)
+nmap <A-k> <action>(MoveStatementUp)
+vmap <A-k> <action>(MoveStatementUp)
+imap <A-j> <action>(MoveStatementDown)
+nmap <A-j> <action>(MoveStatementDown)
+vmap <A-j> <action>(MoveStatementDown)
+nmap <s-H> <action>(PreviousTab)
+nmap <s-L> <action>(NextTab)
+nmap <c-o> <action>(Back)
+nmap <c-i> <action>(Forward)
+
+nmap <leader>ff <action>(GotoClass)
+nmap <leader>fa <action>(GotoFile)
+nmap gl <action>(GotoNextError)
+nmap gd <action>(GotoDeclaration)
+nmap gi <action>(GotoImplementation)
+nmap gs <action>(GotoImplementation)
+nmap za <action>(ExpandCollapseToggleAction)
+
+nmap <leader>lf <action>(ReformatCode)
+nmap <leader>lr <action>(RenameElement)
+vmap <leader>lm <action>(ExtractMethod)
+nmap <leader>lv <action>(IntroduceVariable)
+
+nmap <A-i> <action>(Generate)
+nmap <leader>g <action>(Git.Menu)
+
+nmap <c-z> <action>(ToggleDistractionFreeMode)
+
+map / <action>(Find)
+
+" install IdeaVim-EasyMotion and AceJump plugins
+nmap <leader>J <Plug>(easymotion-s)
+nmap <leader>j <Plug>(easymotion-f)
+
+nmap <leader>e :NERDTree<CR>
+
+map mc <A-n>
+map mx <A-x>
+map mo <A-p>
