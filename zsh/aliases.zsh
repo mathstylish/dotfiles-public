@@ -40,7 +40,8 @@ alias tmp='cd /tmp' \
   ap='asciinema play' \
   au='asciinema upload' \
   fzfp='fzf --preview "bat --color=always {}"' \
-  lua='lua5.4'
+  lua='lua5.4' \
+  rst='/usr/bin/xrdb -merge /home/stylish/.Xresources && kill -USR1 $(pidof st)'
 
 for command in mount unmount pacman updatedb shutdown poweroff reboot; do
   alias $command="sudo $command"
