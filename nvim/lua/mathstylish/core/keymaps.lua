@@ -8,6 +8,11 @@ local opts = { noremap = true, silent = true }
 -- Go to normal mode
 keymap.set("i", "kj", "<Esc>", opts)
 
+-- Turn off hlsearch
+keymap.set("n", "<Esc>", function()
+	vim.cmd([[set nohlsearch]])
+end, opts)
+
 -- Quit
 keymap.set("n", "<leader>q", ":q!<CR>", opts)
 
@@ -67,3 +72,8 @@ end, opts)
 
 -- Live Server
 keymap.set("n", "<leader>ls", ":LiveServerStart<CR>", opts)
+
+-- Debug table
+keymap.set("n", "<leader>dt", function()
+	vim.cmd([[ enew | put=execute('lua =package.loaded') ]])
+end, opts)
