@@ -14,6 +14,10 @@ return {
 	end,
 	dependencies = {
 		{
+			"windwp/nvim-ts-autotag",
+			opts = {},
+		},
+		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			config = function()
 				-- When in diff mode, we want to use the default
@@ -90,6 +94,10 @@ return {
 				goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
 				goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
 			},
+		},
+		autotag = {
+			enable = true,
+			enable_close_on_slash = true,
 		},
 	},
 	---@param opts TSConfig
