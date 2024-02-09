@@ -1,2 +1,2 @@
-require("mathstylish.core")
+require("mathstylish.config")
 require("mathstylish.lazy")
