@@ -1,39 +1,30 @@
 return {
-	{
-		"stevearc/conform.nvim",
-		lazy = true,
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			local conform = require("conform")
-
-			conform.setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-					javascript = { "prettier" },
-					typescript = { "prettier" },
-					yaml = { "prettier" },
-					html = { "prettier" },
-					css = { "prettier" },
-					scss = { "prettier" },
-					-- python = { "isort", "black" },
-				},
-
-				-- uncomment this if you want to enable autosave
-				format_on_save = {
-					lsp_fallback = true,
-					async = true,
-					timeout_ms = 500,
-				},
-			})
-
-			vim.keymap.set({ "n", "v" }, "<leader>lf", function()
-				conform.format({
-					lsp_fallback = true,
-					async = true,
-					timeout_ms = 500,
-				})
-			end, { desc = "Format file or range (in visual mode)" })
-		end,
+	"stevearc/conform.nvim",
+	event = { "BufWritePre" },
+	cmd = { "ConformInfo" },
+	keys = {
+		{
+			"<leader>lf",
+			function()
+				require("conform").format({ async = true, lsp_fallback = true })
+			end,
+			mode = "",
+			desc = "Format buffer",
+		},
 	},
-	
+	opts = {
+		-- Define your formatters
+		formatters_by_ft = {
+			lua = { "stylua" },
+			python = { "isort", "black" },
+			javascriptreact = { { "prettierd", "prettier" } },
+			typescriptreact = { { "prettierd", "prettier" } },
+			html = { "htmlbeautifier" },
+			css = { { "prettierd", "prettier" } },
+			sass = { { "prettierd", "prettier" } },
+			yml = { "yamlfix" },
+		},
+		-- Set up format-on-save
+		format_on_save = { timeout_ms = 500, lsp_fallback = true },
+	},
 }

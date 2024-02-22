@@ -40,10 +40,14 @@ return {
 			ensure_installed = {
 				"stylua", -- lua formatter
 				"prettier", -- prettier formatter
+				"prettierd", -- prettier, as a daemon
+				"yamlfix",
+				"stylelint", -- css linter
 				"eslint_d", -- js/ts linter
 				"luacheck", -- lua linter (luarocks is needed)
 				"cpplint", -- c/c++ linter
 				"codelldb",
+				"htmlbeautifier",
 				-- "isort", -- python formatter
 				-- "black", -- python formatter
 				-- "pylint", -- python linter

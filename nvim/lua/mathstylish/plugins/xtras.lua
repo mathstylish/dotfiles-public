@@ -1,5 +1,5 @@
 return {
-    -- debugging
+	-- debugging
 	{
 		{
 			"jay-babu/mason-nvim-dap.nvim",
@@ -54,17 +54,28 @@ return {
 		},
 	},
 
-    -- live server
+	-- live server
 	{
 		"barrett-ruth/live-server.nvim",
 		build = "npm i -g live-server",
-		cmd = { "LiveServerStart", "LiveServerStop" },
-		config = function()
-			require("live-server").setup({
-				args = {
-					"--port=5555",
-				},
-			})
-		end,
+		cmd = { "LiveServerToggle", "LiveServerStart", "LiveServerStop" },
+		keys = {
+			{
+				"<leader>ls",
+				function()
+					require("live-server").toggle()
+				end,
+				desc = "Toggle Live Server",
+			},
+		},
+	},
+
+	-- terminal
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {
+			open_mapping = [[<C-t>]],
+		},
 	},
 }

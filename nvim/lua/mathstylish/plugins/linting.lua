@@ -8,8 +8,9 @@ return {
 		lint.linters_by_ft = {
 			lua = { "luacheck" },
 			c = { "cpplint" },
-			javascript = { "eslint_d" },
-			typescript = { "eslint_d" },
+			javascriptreact = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
+			css = { "stylelint" },
 			-- python = { "pylint" },
 		}
 

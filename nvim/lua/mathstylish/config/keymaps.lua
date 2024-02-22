@@ -1,6 +1,6 @@
 local discipline = require("mathstylish.util.discipline")
 
-discipline.cowboy()
+-- discipline.cowboy()
 
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
@@ -69,9 +69,6 @@ keymap.set("v", ">", ">gv", opts)
 keymap.set("n", "<C-j>", function()
 	vim.diagnostic.goto_next()
 end, opts)
-
--- Live Server
-keymap.set("n", "<leader>ls", ":LiveServerStart<CR>", opts)
 
 -- Debug table
 keymap.set("n", "<leader>dt", function()

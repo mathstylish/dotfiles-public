@@ -41,7 +41,8 @@ alias tmp='cd /tmp' \
   au='asciinema upload' \
   fzfp='fzf --preview "bat --color=always {}"' \
   lua='lua5.4' \
-  rst='/usr/bin/xrdb -merge /home/stylish/.Xresources && kill -USR1 $(pidof st)'
+  rst='/usr/bin/xrdb -merge /home/stylish/.Xresources && kill -USR1 $(pidof st)' \
+  live-server='live-server --port=5555'
 
 for command in mount unmount pacman updatedb shutdown poweroff reboot; do
   alias $command="sudo $command"
