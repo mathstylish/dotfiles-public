@@ -35,6 +35,8 @@ alias tmp='cd /tmp' \
 	se='vim ~/.config/starship.toml' \
 	fzfp='fzf --preview "bat --color=always {}"' \
 	rst='/usr/bin/xrdb -merge /home/stylish/.Xresources && kill -USR1 $(pidof st)' \
+  svm='cd ~/.local/share/Steam/steamapps/common/Stardew\ Valley/Mods'
+
 
 for command in mount unmount pacman updatedb shutdown poweroff reboot; do
 	alias $command="sudo $command"

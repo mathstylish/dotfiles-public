@@ -28,5 +28,3 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 
-export VIMINIT="if has(\"nvim\") | so ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim | else | set nocp | so ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc | endif"
-
