@@ -9,90 +9,106 @@ Xft.lcdfilter:	lcddefault
 st.borderpx: 10
 
 !-- values between 0.1  - 1.0 --! 
-
 st.alpha: 0.9
 st.font:           JetBrainsMonoNL NF:style:medium:pixelsize=14
 
-*background: #1E1E2E
-*foreground: #CDD6F4
+#define ayu_ui_panel_bg #0f131a
+#define ayu_comment #acb6bf
+#define ayu_accent #e6b450
+#define ayu_ui_bg #0b0e14
+#define ayu_editor_fg #BFBDB6
+#define ayu_ui_fg #565b66
+#define ayu_error #d95757
+#define ayu5 #f07178
+#define ayu10 #7FD962
+#define ayu3  #AAD94C
+#define ayu1  #FFB454
+#define ayu7  #E6B673
+#define ayu0  #39BAE6
+#define ayu2  #59C2FF
+#define ayu13 #6C5980
+#define ayu8  #D2A6FF
+#define ayu11 #73B8FF
+#define ayu4  #95E6CB
 
-! black
-*color0: #45475A
-*color8: #585B70
+! special
+#define colorscheme_accent ayu_accent
+#define colorscheme_background ayu_ui_bg
+#define colorscheme_background_alt0 ayu_editor_fg
+#define colorscheme_background_alt1 ayu_ui_panel_bg
+#define colorscheme_foreground ayu_editor_fg
+#define colorscheme_foreground_alt0 ayu_comment
+#define colorscheme_foreground_alt1 ayu_ui_fg
+
+!black
+#define colorscheme_color0 #000000
+#define colorscheme_color8 ayu_ui_fg
 
 ! red
-*color1: #F38BA8
-*color9: #F38BA8
+#define colorscheme_color1  ayu_error
+#define colorscheme_color9  ayu5
 
 ! green
-*color2: #A6E3A1
-*color10: #A6E3A1
+#define colorscheme_color2  ayu10
+#define colorscheme_color10 ayu3
 
 ! yellow
-*color3: #F9E2AF
-*color11: #F9E2AF
+#define colorscheme_color3  ayu1
+#define colorscheme_color11 ayu7
 
 ! blue
-*color4: #89B4FA
-*color12: #89B4FA
+#define colorscheme_color4  ayu0
+#define colorscheme_color12 ayu2
 
 ! magenta
-*color5: #F5C2E7
-*color13: #F5C2E7
+#define colorscheme_color5  ayu13
+#define colorscheme_color13 ayu8
 
 ! cyan
-*color6: #94E2D5
-*color14: #94E2D5
+#define colorscheme_color6  ayu11
+#define colorscheme_color14 ayu4
 
 ! white
-*color7: #BAC2DE
-*color15: #A6ADC8
+#define colorscheme_color7  #FFFFFF
+#define colorscheme_color15 ayu_editor_fg
 
-/* #define base00 #282c34 */
-/* #define base01 #353b45 */
-/* #define base02 #3e4451 */
-/* #define base03 #545862 */
-/* #define base04 #565c64 */
-/* #define base05 #abb2bf */
-/* #define base06 #b6bdca */
-/* #define base07 #c8ccd4 */
-/* #define base08 #e06c75 */
-/* #define base09 #d19a66 */
-/* #define base0A #e5c07b */
-/* #define base0B #98c379 */
-/* #define base0C #56b6c2 */
-/* #define base0D #61afef */
-/* #define base0E #c678dd */
-/* #define base0F #be5046 */
-/**/
-/* *foreground:   base07 */
-/* *background:   #00121a */
-/* *cursorColor:  base05 */
-/**/
-/* *color0:       base00 */
-/* *color1:       base08 */
-/* *color2:       base0B */
-/* *color3:       base0A */
-/* *color4:       base0D */
-/* *color5:       base0E */
-/* *color6:       base0C */
-/* *color7:       base05 */
-/**/
-/* *color8:       base03 */
-/* *color9:       base08 */
-/* *color10:      base0B */
-/* *color11:      base0A */
-/* *color12:      base0D */
-/* *color13:      base0E */
-/* *color14:      base0C */
-/* *color15:      base07 */
+st.accent: colorscheme_accent
+st.background: ayu_ui_bg
+st.foreground: ayu_editor_fg
+st.background_alt0:  colorscheme_background_alt0
+st.foreground_alt0:  colorscheme_foreground_alt0
+st.background_alt1:  colorscheme_background_alt1
+st.foreground_alt1:  colorscheme_foreground_alt1
+st.cursorColor:      colorscheme_accent
 
-! just remove this if you dont use my tabbed
+! black
+st.color0:  colorscheme_color0
+st.color8:  colorscheme_color8
 
+! red
+st.color1:  colorscheme_color1
+st.color9:  colorscheme_color9
 
+! green
+st.color2:  colorscheme_color2
+st.color10: colorscheme_color10
 
-tabbed.selfgcolor:   #d6d8eb
-tabbed.selbgcolor:   #00121a
+! yellow
+st.color3:  colorscheme_color3
+st.color11: colorscheme_color11
 
-tabbed.normfgcolor:  #9294a8
-tabbed.normbgcolor:  #282c34
+! blue
+st.color4:  colorscheme_color4
+st.color12: colorscheme_color12
+
+! magenta
+st.color5:  colorscheme_color5
+st.color13: colorscheme_color13
+
+! cyan
+st.color6:  colorscheme_color6
+st.color14: colorscheme_color14
+
+! white
+st.color7:  colorscheme_color7
+st.color15: colorscheme_color15
