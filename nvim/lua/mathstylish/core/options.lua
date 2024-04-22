@@ -1,3 +1,7 @@
+vim.cmd([[ colorscheme habamax ]])
+
+vim.cmd("let g:netrw_liststyle = 3")
+
 vim.g.mapleader = " "
 
 vim.scriptencoding = "utf-8"
@@ -6,6 +10,7 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 
+vim.opt.swapfile = false
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -42,11 +47,11 @@ vim.cmd([[ let &t_Ce = "\e[4:0m"]])
 vim.opt.formatoptions:append({ "r" })
 
 if vim.fn.has("nvim-0.8") then
-	vim.opt.cmdheight = 0
+  vim.opt.cmdheight = 0
 end
 
 if vim.fn.has("win32") then
-	vim.opt.clipboard:prepend({ "unnamed", "unnamedplus" })
+  vim.opt.clipboard:prepend({ "unnamed", "unnamedplus" })
 else
-	vim.opt.clipboard:append({ "unnamedplus" })
+  vim.opt.clipboard:append({ "unnamedplus" })
 end

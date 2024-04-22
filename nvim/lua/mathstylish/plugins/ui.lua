@@ -1,121 +1,156 @@
+local noice = { -- replace ui for messages, cmdline and popmenu
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  opts = {
+    lsp = {
+      override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
+      },
+    },
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          any = {
+            { find = "%d+L, %d+B" },
+            { find = "; after #%d+" },
+            { find = "; before #%d+" },
+          },
+        },
+        view = "mini",
+      },
+    },
+    presets = {
+      bottom_search = true,
+      command_palette = true,
+      long_message_to_split = true,
+      inc_rename = true,
+    },
+  },
+}
+local notify = {
+  "rcarriga/nvim-notify",
+  dependencies = noice,
+  keys = {
+    {
+      "<leader>un",
+      function()
+        require("notify").dismiss({ silent = true, pending = true })
+      end,
+    },
+  },
+  opts = {
+    stages = "static",
+    timeout = 3000,
+    max_height = function()
+      return math.floor(vim.o.lines * 0.75)
+    end,
+    max_width = function()
+      return math.floor(vim.o.columns * 0.75)
+    end,
+    on_open = function(win)
+      vim.api.nvim_win_set_config(win, { zindex = 100 })
+    end,
+  },
+}
+
+local dressing = {
+  "stevearc/dressing.nvim",
+  lazy = true,
+  init = function()
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.ui.select = function(...)
+      require("lazy").load({ plugins = { "dressing.nvim" } })
+      return vim.ui.select(...)
+    end
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.ui.input = function(...)
+      require("lazy").load({ plugins = { "dressing.nvim" } })
+      return vim.ui.input(...)
+    end
+  end,
+}
+
+local lualine = {
+  "nvim-lualine/lualine.nvim",
+  config = function()
+    local lualine = require("lualine")
+    local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+
+    lualine.setup({
+      sections = {
+        lualine_x = {
+          {
+            lazy_status.updates,
+            cond = lazy_status.has_updates,
+          },
+          { "encoding" },
+          { "fileformat" },
+          { "filetype" },
+        },
+      },
+    })
+  end,
+}
+
+local indent_blankline = {
+  "lukas-reineke/indent-blankline.nvim",
+  event = { "BufReadPost", "BufWritePre", "BufNewFile" },
+  opts = {
+    indent = {
+      char = "│",
+      tab_char = "│",
+    },
+    scope = { enabled = false },
+    exclude = {
+      filetypes = {
+        "help",
+        "neo-tree",
+        "lazy",
+        "mason",
+        "notify",
+      },
+    },
+  },
+  main = "ibl",
+}
+
+local indent_scope = {
+  "echasnovski/mini.indentscope",
+  version = false,
+  event = { "BufReadPost", "BufWritePre", "BufNewFile" },
+  opts = {
+    symbol = "│",
+    options = { try_as_border = true },
+  },
+  init = function()
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = {
+        "help",
+        "neo-tree",
+        "lazy",
+        "mason",
+        "notify",
+      },
+      callback = function()
+        vim.b.miniindentscope_disable = true
+      end,
+    })
+  end,
+}
+
+local nui = {
+  "MunifTanjim/nui.nvim",
+  lazy = true,
+}
+
 return {
-	-- statusline
-	{
-		"nvim-lualine/lualine.nvim",
-		config = function()
-			local lualine = require("lualine")
-
-			lualine.setup({
-				options = {
-					icons_enabled = true,
-					-- theme = "solarized_dark",
-					section_separators = { left = "", right = "" },
-					component_separators = { left = "", right = "" },
-					disabled_filetypes = {},
-				},
-				sections = {
-					lualine_a = { "mode" },
-					lualine_b = { "branch" },
-					lualine_c = {
-						{
-							"filename",
-							file_status = true, -- displays file status (readonly status, modified status)
-							path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
-						},
-					},
-					lualine_x = {
-						{
-							"diagnostics",
-							sources = { "nvim_diagnostic" },
-							symbols = { error = " ", warn = " ", info = " ", hint = " " },
-						},
-						"encoding",
-						"filetype",
-					},
-					lualine_y = { "progress" },
-					lualine_z = { "location" },
-				},
-				inactive_sections = {
-					lualine_a = {},
-					lualine_b = {},
-					lualine_c = {
-						{
-							"filename",
-							file_status = true, -- displays file status (readonly status, modified status)
-							path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-						},
-					},
-					lualine_x = { "location" },
-					lualine_y = {},
-					lualine_z = {},
-				},
-				tabline = {},
-				extensions = { "fugitive" },
-			})
-		end,
-	},
-
-	-- indent lines
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		opts = {
-			indent = {
-				char = "│",
-				tab_char = "│",
-			},
-			scope = { enabled = false },
-			exclude = {
-				filetypes = {
-					"help",
-					"alpha",
-					"dashboard",
-					"neo-tree",
-					"Trouble",
-					"trouble",
-					"lazy",
-					"mason",
-					"notify",
-					"toggleterm",
-					"lazyterm",
-				},
-			},
-		},
-		main = "ibl",
-	},
-
-	-- indent code scopes
-	{
-		"echasnovski/mini.indentscope",
-		version = false, -- wait till new 0.7.0 release to put it back on semver
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		opts = {
-			-- symbol = "▏",
-			symbol = "│",
-			options = { try_as_border = true },
-		},
-		init = function()
-			vim.api.nvim_create_autocmd("FileType", {
-				pattern = {
-					"help",
-					"alpha",
-					"dashboard",
-					"neo-tree",
-					"Trouble",
-					"trouble",
-					"lazy",
-					"mason",
-					"notify",
-					"toggleterm",
-					"lazyterm",
-				},
-				callback = function()
-					vim.b.miniindentscope_disable = true
-				end,
-			})
-		end,
-	},
-
-    -- icons
-    { "nvim-tree/nvim-web-devicons", lazy = true }
+  notify, -- better vim.notify()
+  dressing, -- better vim.ui
+  lualine, -- statusbar
+  indent_blankline, -- indent guides
+  indent_scope, -- highlight actual indent scope
+  nui, -- ui components
 }

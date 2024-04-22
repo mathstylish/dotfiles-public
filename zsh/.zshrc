@@ -35,6 +35,7 @@ compinit
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+start_ssh_agent
 
 # nvm
 source /usr/share/nvm/init-nvm.sh
