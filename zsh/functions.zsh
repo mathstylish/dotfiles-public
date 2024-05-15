@@ -2,11 +2,11 @@ function gc() {
     user=$2
     repo=$3
     if [[ "$1" == "ssh" ]]; then
-	git clone "git@github.com:${user}/${repo}"
+      git clone "git@github.com:${user}/${repo}"
     elif [[ "$1" == "https" ]]; then
-	git clone "https://github.com/${user}/${repo}"
+      git clone "https://github.com/${user}/${repo}"
     else
-        echo "Usage: gc <http or ssh> repository"
+        echo "Usage: gc <https or ssh> repository"
     fi
 }
 
@@ -23,4 +23,8 @@ function start_ssh_agent() {
           ssh-add "$key" >/dev/null 2>&1
       fi
   done
+}
+
+function cpf() {
+  cat $1 | xclip -sel clip
 }

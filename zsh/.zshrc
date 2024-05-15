@@ -42,7 +42,6 @@ source /usr/share/nvm/init-nvm.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/stylish/.local/share/sdkman"
 [[ -s "/home/stylish/.local/share/sdkman/bin/sdkman-init.sh" ]] && source "/home/stylish/.local/share/sdkman/bin/sdkman-init.sh"
+
+~/dotfiles-public/tmux/start_tmux_on_terminal_open.sh

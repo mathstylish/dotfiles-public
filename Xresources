@@ -1,6 +1,6 @@
 Xft.antialias:	1
 Xft.hinting:	1
-Xft.autohint:	0
+Xft.autohint:	1
 Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
@@ -10,9 +10,8 @@ st.borderpx: 10
 
 !-- values between 0.1  - 1.0 --! 
 st.alpha: 0.9
-st.font:           JetBrainsMonoNL NF:style:medium:pixelsize=14
-
-st.program: /usr/bin/tmux
+/* st.font: CommitMono Nerd Font:pixelsize=15:antialias=true:autohint=true */
+st.font: JetBrainsMono Nerd Font:pixelsize=14:antialias=true:autohint=true
 
 #define ayu_ui_panel_bg #0f131a
 #define ayu_comment #acb6bf
