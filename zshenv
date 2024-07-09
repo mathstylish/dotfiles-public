@@ -27,4 +27,4 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 
 export GOPATH="$XDG_DATA_HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$PATH:$(go env GOPATH)/bin"

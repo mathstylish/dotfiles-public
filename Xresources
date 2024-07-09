@@ -9,14 +9,18 @@ Xft.lcdfilter:	lcddefault
 st.borderpx: 10
 
 !-- values between 0.1  - 1.0 --! 
-st.alpha: 0.9
+st.alpha: 1.0
 /* st.font: CommitMono Nerd Font:pixelsize=15:antialias=true:autohint=true */
 st.font: JetBrainsMono Nerd Font:pixelsize=14:antialias=true:autohint=true
 
 #define ayu_ui_panel_bg #0f131a
 #define ayu_comment #acb6bf
 #define ayu_accent #e6b450
-#define ayu_ui_bg #0b0e14
+/*#define ayu_ui_bg #0b0e14*/
+/* #define ayu_ui_bg #141b1e */
+/* #define ayu_ui_bg #121212 */
+/* #define ayu_ui_bg #282828 -> gruvbox hard */
+#define ayu_ui_bg #1d2021
 #define ayu_editor_fg #BFBDB6
 #define ayu_ui_fg #565b66
 #define ayu_error #d95757
