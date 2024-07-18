@@ -1,3 +1,4 @@
+autorandr --change &
 xset r rate 240 30 &
 nm-applet &
 sleep 0.3 &
