@@ -27,7 +27,7 @@ alias dws='cd ~/Development' \
 	za='vim ~/.config/zsh/aliases.zsh' \
 	ze='vim ~/.config/zsh/.zshrc' \
 	zr='source ~/.config/zsh/.zshrc' \
-	rst='/usr/bin/xrdb -merge /home/stylish/.Xresources && kill -USR1 $(pidof st)' \
+	rst='/usr/bin/xrdb -load -I$HOME/dotfiles-public/Xresources.d ~/.Xresources && kill -USR1 $(pidof st)' \
 
 for command in mount unmount pacman updatedb shutdown poweroff reboot; do
 	alias $command="sudo $command"

@@ -1,0 +1,21 @@
+
+#define bg #383C4A
+#define fg #D2D2D2
+
+#define base00 #383C4A
+#define base01 #9A4138
+#define base02 #4BEC90
+#define base03 #D8D782
+#define base04 #5294E2
+#define base05 #CE50DD
+#define base06 #6BE5E7
+#define base07 #CCCCCC
+
+#define base08 #404552
+#define base09 #E7766B
+#define base0A #3CBF75
+#define base0B #CFCD63
+#define base0C #579CEF
+#define base0D #E7766B
+#define base0E #90FDFF
+#define base0F #FFFFFF

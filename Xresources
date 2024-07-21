@@ -5,115 +5,33 @@ Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
+#include "gruvbox.theme"
+
+*foreground: fg
+*background: bg
+
+*color0:       base00
+*color1:       base01
+*color2:       base02
+*color3:       base03
+*color4:       base04
+*color5:       base05
+*color6:       base06
+*color7:       base07
+
+*color8:       base08
+*color9:       base09
+*color10:      base0A
+*color11:      base0B
+*color12:      base0C
+*color13:      base0D
+*color14:      base0E
+*color15:      base0F
+
+!ST
 ! window padding
 st.borderpx: 10
-
 !-- values between 0.1  - 1.0 --! 
 st.alpha: 1.0
-/* st.font: CommitMono Nerd Font:pixelsize=15:antialias=true:autohint=true */
-st.font: JetBrainsMono Nerd Font:pixelsize=14:antialias=true:autohint=true
-
-#define ayu_ui_panel_bg #0f131a
-#define ayu_comment #acb6bf
-#define ayu_accent #e6b450
-/*#define ayu_ui_bg #0b0e14*/
-/* #define ayu_ui_bg #141b1e */
-/* #define ayu_ui_bg #121212 */
-/* #define ayu_ui_bg #282828 -> gruvbox hard */
-#define ayu_ui_bg #1d2021
-#define ayu_editor_fg #BFBDB6
-#define ayu_ui_fg #565b66
-#define ayu_error #d95757
-#define ayu5 #f07178
-#define ayu10 #7FD962
-#define ayu3  #AAD94C
-#define ayu1  #FFB454
-#define ayu7  #E6B673
-#define ayu0  #39BAE6
-#define ayu2  #59C2FF
-#define ayu13 #6C5980
-#define ayu8  #D2A6FF
-#define ayu11 #73B8FF
-#define ayu4  #95E6CB
-
-! special
-#define colorscheme_accent ayu_accent
-#define colorscheme_background ayu_ui_bg
-#define colorscheme_background_alt0 ayu_editor_fg
-#define colorscheme_background_alt1 ayu_ui_panel_bg
-#define colorscheme_foreground ayu_editor_fg
-#define colorscheme_foreground_alt0 ayu_comment
-#define colorscheme_foreground_alt1 ayu_ui_fg
-
-!black
-#define colorscheme_color0 #000000
-#define colorscheme_color8 ayu_ui_fg
-
-! red
-#define colorscheme_color1  ayu_error
-#define colorscheme_color9  ayu5
-
-! green
-#define colorscheme_color2  ayu10
-#define colorscheme_color10 ayu3
-
-! yellow
-#define colorscheme_color3  ayu1
-#define colorscheme_color11 ayu7
-
-! blue
-#define colorscheme_color4  ayu0
-#define colorscheme_color12 ayu2
-
-! magenta
-#define colorscheme_color5  ayu13
-#define colorscheme_color13 ayu8
-
-! cyan
-#define colorscheme_color6  ayu11
-#define colorscheme_color14 ayu4
-
-! white
-#define colorscheme_color7  #FFFFFF
-#define colorscheme_color15 ayu_editor_fg
-
-st.accent: colorscheme_accent
-st.background: ayu_ui_bg
-st.foreground: ayu_editor_fg
-st.background_alt0:  colorscheme_background_alt0
-st.foreground_alt0:  colorscheme_foreground_alt0
-st.background_alt1:  colorscheme_background_alt1
-st.foreground_alt1:  colorscheme_foreground_alt1
-st.cursorColor:      colorscheme_accent
-
-! black
-st.color0:  colorscheme_color0
-st.color8:  colorscheme_color8
-
-! red
-st.color1:  colorscheme_color1
-st.color9:  colorscheme_color9
-
-! green
-st.color2:  colorscheme_color2
-st.color10: colorscheme_color10
-
-! yellow
-st.color3:  colorscheme_color3
-st.color11: colorscheme_color11
-
-! blue
-st.color4:  colorscheme_color4
-st.color12: colorscheme_color12
-
-! magenta
-st.color5:  colorscheme_color5
-st.color13: colorscheme_color13
-
-! cyan
-st.color6:  colorscheme_color6
-st.color14: colorscheme_color14
-
-! white
-st.color7:  colorscheme_color7
-st.color15: colorscheme_color15
+! font
+st.font: JetBrainsMono Nerd Font:pixelsize=14

@@ -1,0 +1,23 @@
+! Base16 Gruvbox dark, soft
+! Scheme: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+
+#define bg #1d2021
+#define fg #d4be98
+
+#define base00 #32302F
+#define base01 #EA6962
+#define base02 #A9B665
+#define base03 #E78A4E
+#define base04 #7DAEA3
+#define base05 #D3869B
+#define base06 #89B482
+#define base07 #D4BE98
+
+#define base08 #32302F
+#define base09 #EA6962
+#define base0A #A9B665
+#define base0B #E78A4E
+#define base0C #7DAEA3
+#define base0D #D3869B
+#define base0E #89B482
+#define base0F #D4BE98
