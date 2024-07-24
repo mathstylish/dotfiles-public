@@ -3,7 +3,6 @@
 while true; do
   date=$(date "+%a, %b %d")
   time=$(date "+%H:%M")
-  # xsetroot -name " $date 󰥔 $time"
-  xsetroot -name " $date 󰥔 $time"
+  xsetroot -name "^c#FFFFFF^$date | $time"
   sleep 60 # 1 min in milliseconds
 done
