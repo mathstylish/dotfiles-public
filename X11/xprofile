@@ -16,7 +16,8 @@ for program in $autostart; do
 	pidof -sx "$program" || "$program" &
 done >/dev/null 2>&1
 
-~/dotfiles-public/scripts/datetime &
+# ~/dotfiles-public/scripts/datetime &
+dash ~/dotfiles-public/scripts/bar.sh &
 
 # Ensure that xrdb has finished running before moving on to start the WM/DE.
 [ -n "$xrdbpid" ] && wait "$xrdbpid"

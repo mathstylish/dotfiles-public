@@ -1,8 +1,0 @@
-#!/bin/sh
-
-while true; do
-  date=$(date "+%a, %b %d")
-  time=$(date "+%H:%M")
-  xsetroot -name "^c#FFFFFF^$date | $time"
-  sleep 60 # 1 min in milliseconds
-done
