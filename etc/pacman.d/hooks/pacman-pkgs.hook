@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Update pacman package lists after installing/removing a package
+When = PostTransaction
+Exec = /bin/sh -c '/usr/bin/pacman -Qqne > /home/stylish/dotfiles-public/etc/pacman.txt'

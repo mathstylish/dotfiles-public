@@ -1,0 +1,5 @@
+nvm
+ttf-iosevka
+volapplet-git
+yay
+yay-debug

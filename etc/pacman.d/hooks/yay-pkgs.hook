@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Update AUR package lists after installing/removing a package
+When = PostTransaction
+Exec = /bin/sh -c '/usr/bin/pacman -Qmqe > /home/stylish/dotfiles-public/etc/yay.txt'
