@@ -7,8 +7,7 @@ autoarandr --change &
 xset r rate 240 30
 xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger screens.
 xwallpaper --zoom ~/dotfiles-public/wallpapers/stairs.jpg
-xrdb -load -I$HOME/dotfiles-public/Xresources.d ~/.Xresources & xrdbpid=$! # Use Xresources colors/settings on startup
-
+xrdb -load -I$HOME/dotfiles-public/config/x11/Xresources.d ~/.Xresources & xrdbpid=$! # Use Xresources colors/settings on startup
 volapplet -icd &
 
 autostart="nm-applet dunst"
@@ -16,7 +15,6 @@ for program in $autostart; do
 	pidof -sx "$program" || "$program" &
 done >/dev/null 2>&1
 
-# ~/dotfiles-public/scripts/datetime &
 dash ~/dotfiles-public/scripts/bar.sh &
 
 # Ensure that xrdb has finished running before moving on to start the WM/DE.

@@ -1,0 +1,31 @@
+# Default programs:
+export EDITOR="$(command -v nvim >/dev/null 2>&1 && echo nvim || (command -v vim >/dev/null 2>&1 && echo vim || echo vi))"
+export TERMINAL="st"
+export TERMINAL_PROG="st"
+export BROWSER="firefox-developer-edition"
+
+# ~/ Cleanup:
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+
+# Other program settings:
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export QT_QPA_PLATFORMTHEME="gtk2"   # Have QT use gt2 theme
+export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java application in dwm
+
+# Local bin dirs:
+export PATH="$CARGO_HOME/bin:$PATH"
+export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$XDG_DATA_HOME/npm/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
