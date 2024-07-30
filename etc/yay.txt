@@ -1,5 +1,7 @@
 nvm
 ttf-iosevka
 volapplet-git
+xbanish
+xbanish-debug
 yay
 yay-debug

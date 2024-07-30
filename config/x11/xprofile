@@ -9,7 +9,7 @@ xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger scre
 xwallpaper --zoom ~/dotfiles-public/wallpapers/stairs.jpg
 xrdb -load -I$HOME/dotfiles-public/config/x11/Xresources.d ~/.Xresources & xrdbpid=$! # Use Xresources colors/settings on startup
 
-autostart="nm-applet dunst"
+autostart="nm-applet dunst xbanish"
 for program in $autostart; do
 	pidof -sx "$program" || "$program" &
 done >/dev/null 2>&1
