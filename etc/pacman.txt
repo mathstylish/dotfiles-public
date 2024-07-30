@@ -6,6 +6,8 @@ base-devel
 capitaine-cursors
 dash
 discord
+docker
+docker-compose
 dunst
 fd
 firefox-developer-edition-i18n-br
