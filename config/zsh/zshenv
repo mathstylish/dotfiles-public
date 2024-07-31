@@ -23,6 +23,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export QT_QPA_PLATFORMTHEME="gtk2"   # Have QT use gt2 theme
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java application in dwm
+export JAVA_HOME="$(command -v sdk >/dev/null 2>&1 && command -v java >/dev/null 2>&1 && echo $XDG_DATA_HOME/sdkman/candidates/java/current)"
 
 # Local bin dirs:
 export PATH="$CARGO_HOME/bin:$PATH"
