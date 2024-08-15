@@ -24,7 +24,7 @@
     # background = "#458588"
     background = "#1d2021"
     timeout = 5
-    frame_color = "#076678"
+    frame_color = "#17191a"
 
 [urgency_critical]
     background = "#cc241d"
