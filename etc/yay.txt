@@ -1,7 +1,9 @@
 nvm
 ttf-iosevka
+ttf-meslo
+visual-studio-code-bin
+visual-studio-code-bin-debug
 volapplet-git
 xbanish
-xbanish-debug
 yay
 yay-debug
