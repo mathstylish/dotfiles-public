@@ -27,11 +27,11 @@ vmap < <gv
 vmap > >gv
 
 " actions
+nmap ss <action>(SplitVertically)
+nmap sh <action>(SplitHorizontally)
 nmap <leader>w <action>:(SaveAll)<CR>
 nmap <leader>c <action>(CloseContent)
 nmap <leader>C <action>(CloseAllEditors)
-nmap <leader>vs <action>(SplitVertically)
-nmap <leader>vh <action>(SplitHorizontally)
 nmap <leader>m <action>(MoveEditorToOppositeTabGroup)
 nmap Y <action>(EditorDuplicate)
 vmap Y <action>(EditorDuplicate)
@@ -58,6 +58,7 @@ nmap <leader>lf <action>(ReformatCode)
 nmap <leader>lr <action>(RenameElement)
 vmap <leader>lm <action>(ExtractMethod)
 nmap <leader>lv <action>(IntroduceVariable)
+nmap <leader>lc <action>(IntroduceConstant)
 
 nmap <A-i> <action>(Generate)
 nmap <leader>g <action>(Git.Menu)
