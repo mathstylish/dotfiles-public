@@ -15,6 +15,7 @@ fzf
 gd
 git
 gnome-keyring
+gradle
 grub
 gtk-engine-murrine
 gtk2
@@ -43,7 +44,6 @@ plocate
 python-pip
 python-pipx
 python-pynvim
-redshift
 ripgrep
 rofi
 starship
